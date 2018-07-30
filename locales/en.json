@@ -1,0 +1,5 @@
+{
+  "home": {
+    "welcome": "Welcome {{name}} to our app!"
+  }
+}
