@@ -42,4 +42,5 @@ export default class HomeScreen extends Component {
         title={'QRCode Scanner'}
       />
     </View>
+  }
 }

@@ -17,7 +17,8 @@ export default class QRScanner extends Component {
   onSuccess(e) {
     Linking
       .openURL(e.data)
-      .catch(err => console.error('An error occured', err));
+      .catch(err => console.error('An error occured', err))
+    this.props.navigation.navigate('Home')
   }
 
   render () {
