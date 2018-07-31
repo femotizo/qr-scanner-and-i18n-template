@@ -8,7 +8,6 @@ import {
 import { strings, setLocale } from '../../../locales/i18n';
 
 
-
 export default class HomeScreen extends Component {
 
   handleLanguageChange = (locale) => {
@@ -16,8 +15,12 @@ export default class HomeScreen extends Component {
     this.forceUpdate()
   }
 
-  handleButton = () => {
+  handleScannerButton = () => {
     this.props.navigation.navigate('QRScanner')
+  }
+
+  handleGeneratorButton = () => {
+    this.props.navigation.navigate('QRGenerator')
   }
 
   render () {
@@ -54,12 +57,12 @@ export default class HomeScreen extends Component {
       </View>
       <Text style={styles.qrTitle}>{strings('home.qrTitle')}</Text>
       <Button
-        onPress={this.handleButton}
+        onPress={this.handleScannerButton}
         title={'QRCode Scanner'}
         color={'#ff5d1e'}
       />
       <Button
-        onPress={this.handleButton}
+        onPress={this.handleGeneratorButton}
         title={'QRCode Generador'}
         color={'#d2a606'}
       />
