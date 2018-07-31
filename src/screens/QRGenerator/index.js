@@ -1,63 +1,56 @@
 import React, { Component } from 'react'
 import {
-  AppRegistry,
   StyleSheet,
-  Text,
-  TouchableOpacity,
-  Linking,
   View,
-} from 'react-native';
-import QRCodeScanner from 'react-native-qrcode-scanner'
+  TextInput
+} from 'react-native'
+import QRCode from 'react-native-qrcode'
 
-export default class QRScanner extends Component {
+export default class QRGenerator extends Component {
 
   static navigationOptions = {
-    title: 'QR Code Scanner',
+    title: 'QR Code Generator',
   }
 
-  onSuccess(e) {
-    Linking
-      .openURL(e.data)
-      .catch(err => console.error('An error occured', err))
+  state = {
+    text: '',
   }
 
-  render () {
+  render() {
     return (
-      <QRCodeScanner
-        onRead={this.onSuccess.bind(this)}
-        fadeIn
-        showMarker
-        reactivate
-        customMarker={
-          <View
-            style = {
-              styles.marker
-            }
-          />
-        }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}>
-            <Text style={styles.buttonText}>OK. Got it!</Text>
-          </TouchableOpacity>
-        }
-      />
+      <View style={styles.container}>
+        <TextInput
+          style={styles.input}
+          onChangeText={(text) => this.setState({ text: text })}
+          value={this.state.text}
+        />
+        <QRCode
+          value={this.state.text}
+          size={200}
+          bgColor='black'
+          fgColor='#9e9e9e' />
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  buttonText: {
-    fontSize: 21,
-    color: 'rgb(0,122,255)',
+  container: {
+    alignItems: 'center',
+    backgroundColor: '#9e9e9e',
+    flex: 1,
+    justifyContent: 'center'
   },
-  buttonTouchable: {
-    padding: 16,
-  },
-  marker: {
-    width: '65%',
-    height: '65%',
-    borderRadius: 20,
-    borderWidth: 12,
-    borderColor: 'rgba(255, 255, 255, .4)',
-  },
-});
+
+  input: {
+    backgroundColor: '#e6e4e4',
+    borderColor: 'white',
+    borderRadius: 5,
+    borderWidth: 1,
+    height: 40,
+    margin: 40,
+    padding: 5,
+    paddingLeft: 10,
+    width: '70%',
+  }
+})
