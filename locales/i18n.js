@@ -24,6 +24,10 @@ I18n.langs = [
 
 const currentLocale = I18n.currentLocale();
 
+const locale = currentLocale.split('-')[0]
+
+setLocale(locale);
+
 // Is it a RTL language?
 export const isRTL = currentLocale.indexOf('he') === 0 || currentLocale.indexOf('ar') === 0;
 
