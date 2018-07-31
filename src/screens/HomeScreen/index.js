@@ -15,6 +15,10 @@ export default class HomeScreen extends Component {
     this.forceUpdate()
   }
 
+  handleButton = () => {
+    this.props.navigation.navigate('QRScanner')
+  }
+
   render () {
     return <View>
       <Text>{strings('home.welcome', { name: "Jon Doe" })}</Text>
@@ -33,6 +37,10 @@ export default class HomeScreen extends Component {
           title={"AR"}
           />
       </View>
+      <Button
+        onPress={this.handleButton}
+        title={'QRCode Scanner'}
+      />
     </View>
   }
 }
