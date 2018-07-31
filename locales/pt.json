@@ -1,5 +1,6 @@
 {
   "home": {
-    "welcome": "Bem vindo {{name}} à nossa app!"
+    "welcome": "Bem vindo {{name}} à nossa app!",
+    "qrTitle": "Opções para o código QR"
   }
 }
