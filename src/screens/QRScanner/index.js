@@ -19,7 +19,6 @@ export default class QRScanner extends Component {
     Linking
       .openURL(e.data)
       .catch(err => console.error('An error occured', err))
-    // this.props.navigation.navigate('Home')
   }
 
   render () {
@@ -47,16 +46,6 @@ export default class QRScanner extends Component {
 }
 
 const styles = StyleSheet.create({
-  centerText: {
-    flex: 1,
-    fontSize: 18,
-    padding: 32,
-    color: '#777',
-  },
-  textBold: {
-    fontWeight: '500',
-    color: '#000',
-  },
   buttonText: {
     fontSize: 21,
     color: 'rgb(0,122,255)',
