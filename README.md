@@ -1,6 +1,9 @@
 # qr-scanner-and-i18n-template
 A QR code scanner + i18n.js template for React Native
 
+
+Please note, this will also function as a generic barcode scanner by the virtue of the above module supporting barcode scanning, however, this module was initially built as a QR code scanner.
+
 ## Getting started
 
 ### Requirements
@@ -25,16 +28,21 @@ With iOS 10 and higher you need to add the "Privacy - Camera Usage Description" 
 
 With Android 7 and higher you need to add the "Vibration" permission to your AndroidManifest.xml of your project. This should be found in your `android/app/src/main/AndroidManifest.xml` Add the following:
 
-### Needs link react-native-qrcode-scanner:
 ```
-npm install react-native-qrcode-scanner --save
+<uses-permission android:name="android.permission.VIBRATE"/>
+```
 
+### Needs link react-native-qrcode-scanner:
 ```
 react-native link
 react-native link react-native-camera
 react-native link react-native-qrcode-scanner
 react-native link react-native-permissions
 ```
+
+## Thanks to
+[react-native-qrcode-scanner](https://github.com/moaazsidat/react-native-qrcode-scanner)
+[react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n)
 
 ### To do
 - Document other complex examples
