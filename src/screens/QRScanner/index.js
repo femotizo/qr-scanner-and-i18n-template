@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   Linking,
+  View,
 } from 'react-native';
 import QRCodeScanner from 'react-native-qrcode-scanner'
 
@@ -18,17 +19,22 @@ export default class QRScanner extends Component {
     Linking
       .openURL(e.data)
       .catch(err => console.error('An error occured', err))
-    this.props.navigation.navigate('Home')
+    // this.props.navigation.navigate('Home')
   }
 
   render () {
     return (
       <QRCodeScanner
         onRead={this.onSuccess.bind(this)}
-        topContent={
-          <Text style={styles.centerText}>
-            Go to <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on your computer and scan the QR code.
-          </Text>
+        fadeIn
+        showMarker
+        reactivate
+        customMarker={
+          <View
+            style = {
+              styles.marker
+            }
+          />
         }
         bottomContent={
           <TouchableOpacity style={styles.buttonTouchable}>
@@ -57,5 +63,12 @@ const styles = StyleSheet.create({
   },
   buttonTouchable: {
     padding: 16,
+  },
+  marker: {
+    width: '65%',
+    height: '65%',
+    borderRadius: 20,
+    borderWidth: 12,
+    borderColor: 'rgba(255, 255, 255, .4)',
   },
 });
