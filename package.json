@@ -13,6 +13,7 @@
     "react-native": "0.56.0",
     "react-native-camera": "^1.1.4",
     "react-native-i18n": "^2.0.15",
+    "react-native-qrcode": "^0.2.7",
     "react-native-qrcode-scanner": "^1.0.1",
     "react-navigation": "^2.9.3"
   },
