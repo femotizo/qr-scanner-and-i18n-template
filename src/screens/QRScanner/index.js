@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
   marker: {
     width: '65%',
     height: '65%',
-    borderRadius: 20,
-    borderWidth: 12,
+    borderRadius: 16,
+    borderWidth: 6,
     borderColor: 'rgba(255, 255, 255, .4)',
   },
   closeButton: {

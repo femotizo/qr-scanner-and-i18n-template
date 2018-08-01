@@ -10,6 +10,11 @@ import { strings, setLocale } from '../../../locales/i18n';
 
 export default class HomeScreen extends Component {
 
+  static navigationOptions = {
+    title: 'Home',
+    // header: null to hide the navigation bar 
+  }
+
   handleLanguageChange = (locale) => {
     setLocale(locale)
     this.forceUpdate()

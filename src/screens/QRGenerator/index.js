@@ -28,7 +28,8 @@ export default class QRGenerator extends Component {
           value={this.state.text}
           size={200}
           bgColor='black'
-          fgColor='#9e9e9e' />
+          fgColor='#9e9e9e'
+        />
       </View>
     )
   }
